@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantaciclismo Dashboard</title>
+</head>
+<body>
+    <h1>Fantaciclismo Dashboard</h1>
+    <p id="suggestion">Caricamento consiglio...</p>
+
+    <script>
+        fetch('/api/suggestion')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('suggestion').innerText = data.suggestion;
+            });
+    </script>
+</body>
+</html>
